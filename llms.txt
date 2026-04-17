@@ -1,0 +1,37 @@
+# Solidity Style Guide
+
+> A comprehensive, AI-ready Solidity style guide for writing consistent, safe, and gas-aware smart contracts. Targets Solidity 0.8.30 with coverage of ERC-7201 namespaced storage, transient storage, custom errors in `require`, named imports, NatSpec, and Foundry testing conventions.
+
+The canonical source is `README.md`. This file is a machine-friendly index for LLMs.
+
+## Docs
+
+- [README](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/README.md): full guide with ✅ / ❌ Solidity examples for every rule.
+- [AGENTS.md](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/AGENTS.md): instructions for AI coding agents editing or applying the guide.
+- [CLAUDE.md](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/CLAUDE.md): Claude Code–specific notes.
+- [CONTRIBUTING](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/CONTRIBUTING.md): how to propose new rules.
+- [SECURITY](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/SECURITY.md): disclosure policy.
+
+## Tooling configs (copy-paste ready)
+
+- [.solhint.json](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/.solhint.json): Solhint rules matching the guide.
+- [.prettierrc](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/.prettierrc): prettier-plugin-solidity config (120 cols, 4 spaces, double quotes).
+- [.editorconfig](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/.editorconfig): editor defaults.
+
+## Skill package
+
+- [skill/SKILL.md](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/skill/SKILL.md): Claude Code skill for applying the guide on any Solidity repo.
+
+## Core rules (one-liners)
+
+- Use the latest stable Solidity (**0.8.30** at time of writing).
+- Pin `pragma solidity 0.8.30;` in deployable contracts; use `^0.8.20` in libraries.
+- Use **named imports**: `import {X} from "./X.sol";`.
+- Use **custom errors**, including inside `require(cond, CustomError())` (≥ 0.8.26).
+- **ERC-7201 namespaced storage** for upgradeable contracts.
+- Always write explicit types: `uint256`, not `uint`.
+- Internal / private identifiers start with `_`.
+- Constants `SNAKE_UPPER_CASE`, private constants `_SNAKE_UPPER_CASE`.
+- Max line length 120, 4-space indent, LF, UTF-8.
+- One contract / interface / library per file, name matching filename.
+- Foundry test naming: `test_Description`, `testFuzz_Description`, `test_RevertWhen_Description`, `invariant_Property`.

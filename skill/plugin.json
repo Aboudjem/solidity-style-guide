@@ -1,0 +1,15 @@
+{
+  "name": "solidity-style-guide",
+  "version": "2.0.0",
+  "description": "Apply the Aboudjem/solidity-style-guide rules to Solidity code — review, rewrite, or audit.",
+  "author": "Adam Boudjemaa",
+  "license": "MIT",
+  "homepage": "https://github.com/Aboudjem/solidity-style-guide",
+  "skills": [
+    {
+      "name": "solidity-style-guide",
+      "path": "SKILL.md",
+      "description": "Review and apply the Solidity style guide to any Solidity project."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# Cursor rules for this repo — mirrors AGENTS.md
+
+You are working in a Solidity style guide docs repo. The canonical source is README.md.
+
+## Hard rules
+- No emojis added to files unless already present.
+- Max line length 120. Solidity indent 4 spaces. UTF-8 + LF.
+- Every rule section needs both a ✅ Yes and ❌ No Solidity example.
+- Pragma in examples: `^0.8.20` for libraries, `0.8.30` pinned for apps.
+- Named imports only: `import {X} from "./X.sol";`.
+- Prefer custom errors; `require(cond, CustomError())` syntax for ≥ 0.8.26 examples.
+- Explicit types only: `uint256`, not `uint`.
+- Internal / private identifiers prefixed with `_`.
+
+## When applying this guide to another codebase
+1. Open README.md (or load the bundled Claude Code skill at `skill/SKILL.md`).
+2. Produce a checklist of violations.
+3. Fix in order: layout → naming → formatting → best practices → tests.
+4. Do not alter contract behavior; style changes only unless asked.
+
+## Do not
+- Don't collapse rules into fewer sections.
+- Don't swap Foundry examples for Hardhat.
+- Don't remove the `> [!NOTE]`-style callouts.
+- Don't touch `LICENSE` or rewrite `SECURITY.md` without explicit request.
