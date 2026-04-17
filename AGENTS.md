@@ -1,7 +1,7 @@
 # AGENTS.md
 
 > A short context file for coding agents (Claude Code, Cursor, Codex, Aider, etc.) working in this repository.
-> For humans: see [README.md](./README.md). For deep rule reference: see [docs/rules.md](./docs/rules.md) if present, else the README.
+> For humans: see [README.md](./README.md). The full rule catalog lives in the README; this file is the short version for coding agents.
 
 ## What this repo is
 
@@ -78,7 +78,7 @@ npm run check
 /.github/                 Issue / PR templates and CI
 ```
 
-## Style for *edits to this guide*
+## Style for _edits to this guide_
 
 - Add a new rule? Match the existing pattern: `#### Rule Name` → short rationale → `**✅ Yes:**` / `**❌ No:**` Solidity blocks → `> [!TIP|NOTE|IMPORTANT|WARNING|CAUTION]` callout.
 - Update the table of contents if you add an `H3`/`H4`.

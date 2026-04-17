@@ -16,7 +16,7 @@ Trigger automatically on:
 
 - `.sol` files in the workspace
 - `foundry.toml`, `remappings.txt`, `.solhint.json` present
-- User says: *review my contract*, *clean up this Solidity*, *apply the style guide*, *is this gas-optimal?*, *make this audit-ready*
+- User says: _review my contract_, _clean up this Solidity_, _apply the style guide_, _is this gas-optimal?_, _make this audit-ready_
 
 ## Output contract
 
@@ -57,15 +57,15 @@ Trigger automatically on:
 
 ### Naming
 
-| Element | Style | Notes |
-| --- | --- | --- |
-| Contract / Library / Interface | `PascalCase` | Interfaces prefixed `I` |
-| Struct / Event / Enum / custom Error | `PascalCase` | Events in past tense |
-| Function / modifier / variable / argument | `camelCase` | |
-| Public constant | `SNAKE_UPPER_CASE` | |
-| Private / internal constant | `_SNAKE_UPPER_CASE` | Leading `_` |
-| Non-external fn / state var | `_leadingUnderscore` | |
-| Avoid | `l`, `O`, `I` single-letter | Visually ambiguous |
+| Element                                   | Style                       | Notes                   |
+| ----------------------------------------- | --------------------------- | ----------------------- |
+| Contract / Library / Interface            | `PascalCase`                | Interfaces prefixed `I` |
+| Struct / Event / Enum / custom Error      | `PascalCase`                | Events in past tense    |
+| Function / modifier / variable / argument | `camelCase`                 |                         |
+| Public constant                           | `SNAKE_UPPER_CASE`          |                         |
+| Private / internal constant               | `_SNAKE_UPPER_CASE`         | Leading `_`             |
+| Non-external fn / state var               | `_leadingUnderscore`        |                         |
+| Avoid                                     | `l`, `O`, `I` single-letter | Visually ambiguous      |
 
 ### Formatting
 

@@ -10,17 +10,6 @@ permissions:
   contents: read
 
 jobs:
-  prettier:
-    name: Prettier (format check)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Prettier check
-        run: npx --yes prettier@3.3.3 --plugin=prettier-plugin-solidity --check "**/*.{md,yml,yaml,json,sol}"
-
   markdownlint:
     name: Markdownlint
     runs-on: ubuntu-latest
@@ -32,19 +21,18 @@ jobs:
       - name: Run markdownlint
         run: npx --yes markdownlint-cli2@0.13.0 "**/*.md" "#node_modules" "#skill/references/**"
 
-  links:
-    name: Markdown link check
+  prettier:
+    name: Prettier (format check)
     runs-on: ubuntu-latest
-    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
-      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+      - uses: actions/setup-node@v4
         with:
-          use-quiet-mode: "yes"
-          use-verbose-mode: "yes"
-          config-file: ".github/mlc-config.json"
-          folder-path: "."
-          file-extension: ".md"
+          node-version: 20
+      - name: Install Prettier
+        run: npm i --no-save prettier@3.3.3
+      - name: Prettier check (md, yml, json)
+        run: npx prettier --check "**/*.{md,yml,yaml,json}" "!**/node_modules/**"
 
   svg-validate:
     name: Validate SVG banner

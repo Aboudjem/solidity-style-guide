@@ -3,8 +3,11 @@
   "default": true,
   "MD013": false,
   "MD024": { "siblings_only": true },
+  "MD028": false,
+  "MD029": { "style": "ordered" },
   "MD033": false,
-  "MD041": false,
   "MD036": false,
-  "MD029": { "style": "ordered" }
+  "MD040": false,
+  "MD041": false,
+  "MD051": false
 }

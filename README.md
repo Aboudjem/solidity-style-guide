@@ -40,13 +40,13 @@ Solidity gives you enough rope to ship fast or to lose funds. The official style
 
 ## At a glance
 
-| | |
-| :--- | :--- |
-| **Target version** | Solidity `0.8.34` pinned for apps, `^0.8.20` for libraries |
-| **Scope** | Naming, layout, formatting, NatSpec, best practices, Foundry tests, gas, security |
-| **Tooling** | [Solhint](./.solhint.json) · [Prettier](./.prettierrc) · [EditorConfig](./.editorconfig) · [CI](./.github/workflows/ci.yml) |
-| **Editor context** | [AGENTS.md](./AGENTS.md) · [CLAUDE.md](./CLAUDE.md) · [llms.txt](./llms.txt) · [.cursorrules](./.cursorrules) |
-| **Companions** | [Official guide](https://docs.soliditylang.org/en/latest/style-guide.html) · [Foundry Book](https://book.getfoundry.sh/) · [RareSkills](https://www.rareskills.io/post/solidity-style-guide) · [Coinbase](https://github.com/coinbase/solidity-style-guide) |
+|                    |                                                                                                                                                                                                                                                             |
+| :----------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Target version** | Solidity `0.8.34` pinned for apps, `^0.8.20` for libraries                                                                                                                                                                                                  |
+| **Scope**          | Naming, layout, formatting, NatSpec, best practices, Foundry tests, gas, security                                                                                                                                                                           |
+| **Tooling**        | [Solhint](./.solhint.json) · [Prettier](./.prettierrc) · [EditorConfig](./.editorconfig) · [CI](./.github/workflows/ci.yml)                                                                                                                                 |
+| **Editor context** | [AGENTS.md](./AGENTS.md) · [CLAUDE.md](./CLAUDE.md) · [llms.txt](./llms.txt) · [.cursorrules](./.cursorrules)                                                                                                                                               |
+| **Companions**     | [Official guide](https://docs.soliditylang.org/en/latest/style-guide.html) · [Foundry Book](https://book.getfoundry.sh/) · [RareSkills](https://www.rareskills.io/post/solidity-style-guide) · [Coinbase](https://github.com/coinbase/solidity-style-guide) |
 
 ## Quick start
 

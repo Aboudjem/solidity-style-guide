@@ -30,7 +30,7 @@ Inside Claude Code:
 /solidity-style-guide:apply-config     # copy solhint/prettier/editorconfig
 ```
 
-Or just ask: *"review my Solidity against the style guide"* — Claude Code will auto-trigger the skill on `.sol` files.
+Or just ask: _"review my Solidity against the style guide"_ — Claude Code will auto-trigger the skill on `.sol` files.
 
 ## What's inside
 

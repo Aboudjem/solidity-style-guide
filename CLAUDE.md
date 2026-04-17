@@ -10,7 +10,7 @@ You are working in a **Solidity style guide** documentation repo. The deliverabl
 
 Load the rules from `README.md` (or invoke the bundled skill in `skill/SKILL.md`) and review or rewrite the target `.sol` files to match. Report violations as a checklist before editing.
 
-### When editing *this* repo
+### When editing _this_ repo
 
 1. Keep `README.md` as the single canonical source.
 2. Match existing formatting: H3 sections, `#### Rule Name`, `✅ Yes` / `❌ No` Solidity blocks, `> [!NOTE|TIP|IMPORTANT|WARNING|CAUTION]` callouts.
