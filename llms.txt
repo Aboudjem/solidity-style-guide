@@ -1,13 +1,13 @@
 # Solidity Style Guide
 
-> A comprehensive, AI-ready Solidity style guide for writing consistent, safe, and gas-aware smart contracts. Targets Solidity 0.8.30 with coverage of ERC-7201 namespaced storage, transient storage, custom errors in `require`, named imports, NatSpec, and Foundry testing conventions.
+> A practical Solidity style guide for writing consistent, safe, and gas-aware smart contracts. Targets Solidity 0.8.34 with coverage of ERC-7201 namespaced storage, transient storage, custom errors in `require`, named imports, NatSpec, and Foundry testing conventions.
 
 The canonical source is `README.md`. This file is a machine-friendly index for LLMs.
 
 ## Docs
 
 - [README](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/README.md): full guide with ✅ / ❌ Solidity examples for every rule.
-- [AGENTS.md](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/AGENTS.md): instructions for AI coding agents editing or applying the guide.
+- [AGENTS.md](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/AGENTS.md): instructions for coding agents editing or applying the guide.
 - [CLAUDE.md](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/CLAUDE.md): Claude Code–specific notes.
 - [CONTRIBUTING](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/CONTRIBUTING.md): how to propose new rules.
 - [SECURITY](https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/SECURITY.md): disclosure policy.
@@ -24,8 +24,8 @@ The canonical source is `README.md`. This file is a machine-friendly index for L
 
 ## Core rules (one-liners)
 
-- Use the latest stable Solidity (**0.8.30** at time of writing).
-- Pin `pragma solidity 0.8.30;` in deployable contracts; use `^0.8.20` in libraries.
+- Use the latest stable Solidity (**0.8.34** at time of writing).
+- Pin `pragma solidity 0.8.34;` in deployable contracts; use `^0.8.20` in libraries.
 - Use **named imports**: `import {X} from "./X.sol";`.
 - Use **custom errors**, including inside `require(cond, CustomError())` (≥ 0.8.26).
 - **ERC-7201 namespaced storage** for upgradeable contracts.

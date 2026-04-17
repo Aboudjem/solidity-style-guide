@@ -1,7 +1,7 @@
 <!--
-  title: Solidity Style Guide — consistent, safe, gas-aware smart contracts (0.8.30)
-  description: A comprehensive, AI-ready Solidity style guide for Ethereum smart contracts. Covers naming, layout, NatSpec, custom errors, ERC-7201 namespaced storage, transient storage, Foundry testing, gas optimization, and security, with copy-paste Solhint and Prettier configs.
-  keywords: solidity style guide, solidity best practices, smart contract style guide, ethereum, foundry, erc-7201, custom errors, namespaced storage, gas optimization, solhint, prettier-plugin-solidity, solidity 0.8.30, AGENTS.md, Claude Code skill
+  title: Solidity Style Guide — consistent, safe, gas-aware smart contracts (0.8.34)
+  description: A practical Solidity style guide for Ethereum smart contracts. Naming, layout, NatSpec, custom errors, ERC-7201 namespaced storage, transient storage, Foundry testing, gas optimization, and security, with copy-paste Solhint and Prettier configs.
+  keywords: solidity style guide, solidity best practices, smart contract style guide, ethereum, foundry, erc-7201, custom errors, namespaced storage, gas optimization, solhint, prettier-plugin-solidity, solidity 0.8.34
   author: Adam Boudjemaa
 -->
 
@@ -14,45 +14,76 @@
 <h1 align="center">Solidity Style Guide</h1>
 
 <p align="center">
-  <em>A comprehensive, AI-ready style guide for writing consistent, safe, and gas-aware Solidity.</em><br/>
-  Tracks <strong>Solidity 0.8.30</strong>, <a href="https://eips.ethereum.org/EIPS/eip-7201">ERC-7201</a> namespaced storage, <a href="https://eips.ethereum.org/EIPS/eip-1153">EIP-1153</a> transient storage, and modern <a href="https://getfoundry.sh">Foundry</a> conventions.
+  <em>Consistent. Safe. Gas-aware.</em><br/>
+  A practical style guide for modern Solidity, tracking <strong>0.8.34</strong>, <a href="https://eips.ethereum.org/EIPS/eip-7201">ERC-7201</a> namespaced storage, <a href="https://eips.ethereum.org/EIPS/eip-1153">EIP-1153</a> transient storage, and current <a href="https://getfoundry.sh">Foundry</a> conventions.
 </p>
 
 <p align="center">
-  <a href="https://github.com/Aboudjem/solidity-style-guide/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Aboudjem/solidity-style-guide?style=for-the-badge&color=00D4FF"></a>
-  <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-7C3AED?style=for-the-badge"></a>
-  <a href="https://docs.soliditylang.org/en/v0.8.30/"><img alt="Solidity 0.8.30" src="https://img.shields.io/badge/Solidity-0.8.30-FF006E?style=for-the-badge&logo=solidity"></a>
-  <a href="./AGENTS.md"><img alt="AGENTS.md ready" src="https://img.shields.io/badge/AGENTS.md-ready-22c55e?style=for-the-badge"></a>
-  <a href="./skill/SKILL.md"><img alt="Claude Code skill" src="https://img.shields.io/badge/Claude%20Code-skill-FFD166?style=for-the-badge"></a>
+  <a href="https://github.com/Aboudjem/solidity-style-guide/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Aboudjem/solidity-style-guide?style=flat-square&color=00D4FF"></a>
+  <a href="./LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-7C3AED?style=flat-square"></a>
+  <a href="https://docs.soliditylang.org/en/v0.8.34/"><img alt="Solidity 0.8.34" src="https://img.shields.io/badge/Solidity-0.8.34-FF006E?style=flat-square&logo=solidity"></a>
+  <a href="https://github.com/Aboudjem/solidity-style-guide/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/Aboudjem/solidity-style-guide/ci.yml?style=flat-square&label=CI"></a>
+  <a href="https://github.com/Aboudjem/solidity-style-guide/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Aboudjem/solidity-style-guide?style=flat-square&color=22c55e"></a>
 </p>
+
+---
+
+## Why this guide
+
+Solidity gives you enough rope to ship fast or to lose funds. The official style guide covers formatting; this one covers the patterns that prevent audit findings and waste gas.
+
+- **One canonical source.** Every rule has a `✅ Yes` and a `❌ No` example.
+- **Modern Solidity.** Pinned to 0.8.34. Covers transient storage, custom errors in `require`, ERC-7201, and Pectra-era defaults.
+- **Copy-paste tooling.** A matching Solhint config, a Prettier config, an EditorConfig, and a GitHub Actions workflow.
+- **Foundry-first testing.** Naming matrix, invariants, fuzz, fork tests.
+- **Editor integrations.** Context files for [Cursor](./.cursorrules), [Claude Code](./CLAUDE.md), and any agent that reads [AGENTS.md](./AGENTS.md) or [llms.txt](./llms.txt).
 
 ## At a glance
 
 | | |
 | :--- | :--- |
-| **Target** | Solidity `0.8.30` (pinned for apps), `^0.8.20` for libraries |
+| **Target version** | Solidity `0.8.34` pinned for apps, `^0.8.20` for libraries |
 | **Scope** | Naming, layout, formatting, NatSpec, best practices, Foundry tests, gas, security |
-| **Tooling** | [Solhint](./.solhint.json) · [Prettier](./.prettierrc) · [EditorConfig](./.editorconfig) · [CI workflow](./.github/workflows/ci.yml) |
-| **AI-ready** | [AGENTS.md](./AGENTS.md) · [CLAUDE.md](./CLAUDE.md) · [llms.txt](./llms.txt) · [.cursorrules](./.cursorrules) · [Claude Code skill](./skill/SKILL.md) |
-| **Companions** | Official [Solidity Style Guide](https://docs.soliditylang.org/en/latest/style-guide.html) · [Foundry Book](https://book.getfoundry.sh/) · [RareSkills guide](https://www.rareskills.io/post/solidity-style-guide) · [Coinbase guide](https://github.com/coinbase/solidity-style-guide) |
+| **Tooling** | [Solhint](./.solhint.json) · [Prettier](./.prettierrc) · [EditorConfig](./.editorconfig) · [CI](./.github/workflows/ci.yml) |
+| **Editor context** | [AGENTS.md](./AGENTS.md) · [CLAUDE.md](./CLAUDE.md) · [llms.txt](./llms.txt) · [.cursorrules](./.cursorrules) |
+| **Companions** | [Official guide](https://docs.soliditylang.org/en/latest/style-guide.html) · [Foundry Book](https://book.getfoundry.sh/) · [RareSkills](https://www.rareskills.io/post/solidity-style-guide) · [Coinbase](https://github.com/coinbase/solidity-style-guide) |
 
 ## Quick start
 
+Drop the configs into your project, install two dev dependencies, and you're linting and formatting in under a minute.
+
 ```bash
-# 1. Copy the tooling into your Solidity project
+# 1. Pull the configs
 curl -O https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/.solhint.json
 curl -O https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/.prettierrc
 curl -O https://raw.githubusercontent.com/Aboudjem/solidity-style-guide/main/.editorconfig
 
-# 2. Install dev deps
+# 2. Install
 npm i -D solhint prettier prettier-plugin-solidity
 
-# 3. Lint + format
+# 3. Lint and format
 npx solhint 'src/**/*.sol'
 npx prettier --write 'src/**/*.sol'
 ```
 
-Using Claude Code? Drop `skill/` into `.claude/skills/` and run `/solidity-style-guide:review`.
+<details>
+<summary><strong>Editor integrations</strong> (click to expand)</summary>
+
+<br>
+
+**Claude Code** — drop the bundled skill into `.claude/skills/`, then call it by name.
+
+```bash
+mkdir -p .claude/skills && cp -r skill .claude/skills/solidity-style-guide
+# inside Claude Code:
+/solidity-style-guide:review
+```
+
+**Cursor, Codex, Aider** — they pick up [`AGENTS.md`](./AGENTS.md) and [`.cursorrules`](./.cursorrules) automatically once the files sit at the repo root.
+
+**Any LLM-backed tool** — point it at [`llms.txt`](./llms.txt) for a token-efficient index of the rules and configs.
+
+</details>
 
 ## Table of contents
 
@@ -140,7 +171,7 @@ Using Claude Code? Drop `skill/` into `.claude/skills/` and run `/solidity-style
       - [Integer Overflow and Underflow](#integer-overflow-and-underflow)
       - [Handling Ether Transfers](#handling-ether-transfers)
     - [Code Reviews and Audits](#code-reviews-and-audits)
-  - [Using this guide with AI coding agents](#using-this-guide-with-ai-coding-agents)
+  - [Editor integrations](#editor-integrations)
     - [Claude Code](#claude-code)
     - [Cursor, Codex, Aider](#cursor-codex-aider)
     - [llms.txt](#llmstxt)
@@ -406,12 +437,12 @@ Use UTF-8 or ASCII encoding for Solidity files.
 
 #### Use the Latest Version of Solidity
 
-**Rule:** Use the latest stable version of Solidity. At the time of writing that is **0.8.30**, which shipped as a maintenance release alongside the Ethereum Pectra upgrade and switched the default EVM target from Cancun to Prague. Recent releases bring material wins: transient storage (`tstore` / `tload`) since 0.8.24, `MCOPY` since 0.8.25, `require(cond, CustomError())` since 0.8.26 (via-IR) / 0.8.27 (legacy), and custom storage layouts plus EOF experimental support since 0.8.29.
+**Rule:** Use the latest stable version of Solidity. At the time of writing that is **0.8.34** (released Feb 18, 2026), a bugfix release patching an IR-pipeline issue around clearing transient storage variables. Recent releases bring material wins: transient storage (`tstore` / `tload`) since 0.8.24, `MCOPY` since 0.8.25, `require(cond, CustomError())` since 0.8.26 (via-IR) / 0.8.27 (legacy), custom storage layouts and experimental EOF since 0.8.29, and the Prague EVM default since 0.8.30.
 
 For **application contracts**, pin the version:
 
 ```solidity
-pragma solidity 0.8.30;
+pragma solidity 0.8.34;
 ```
 
 For **libraries, mixins, and reusable components**, use an open floor so downstream consumers aren't forced to upgrade in lockstep:
@@ -1994,7 +2025,7 @@ Annotate the storage struct with `@custom:storage-location erc7201:<namespace>` 
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.30;
+pragma solidity 0.8.34;
 
 contract Vault {
     /// @custom:storage-location erc7201:myapp.storage.Vault
@@ -2024,7 +2055,7 @@ contract Vault {
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.30;
+pragma solidity 0.8.34;
 
 contract Vault {
     // Plain slot-0 storage (will collide with parent contracts in a proxy).
@@ -2038,13 +2069,13 @@ contract Vault {
 
 #### Use Transient Storage Where It Fits
 
-**Rule:** Transient storage (`tstore` / `tload`, [EIP-1153](https://eips.ethereum.org/EIPS/eip-1153)) is available from Solidity 0.8.24 and provides per-transaction scratch space that costs far less than `SSTORE` / `SLOAD`. It is ideal for reentrancy locks, temporary flags, and call-graph metadata. Requires the Cancun EVM target or later; Solidity 0.8.30 defaults to Prague.
+**Rule:** Transient storage (`tstore` / `tload`, [EIP-1153](https://eips.ethereum.org/EIPS/eip-1153)) is available from Solidity 0.8.24 and provides per-transaction scratch space that costs far less than `SSTORE` / `SLOAD`. It is ideal for reentrancy locks, temporary flags, and call-graph metadata. Requires the Cancun EVM target or later; Solidity 0.8.34 defaults to Prague.
 
 **✅ Yes (reentrancy lock on transient storage):**
 
 ```solidity
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.30;
+pragma solidity 0.8.34;
 
 abstract contract TransientReentrancyGuard {
     // bytes32(uint256(keccak256("eip1967.reentrancy.slot")) - 1)
@@ -2423,13 +2454,13 @@ Regular code reviews and security audits are essential for identifying and mitig
 
 By following these best practices, you can enhance the performance, security, and robustness of your Solidity smart contracts.
 
-### Using this guide with AI coding agents
+### Editor integrations
 
-This repo is AI-ready. Every modern coding agent has a canonical context file here:
+Every modern code editor and agent has a canonical context file here, so you can point your tools at this repo and they will load the rules automatically:
 
-- **[AGENTS.md](./AGENTS.md)**: the open format for AI coding agents
+- **[AGENTS.md](./AGENTS.md)**: the open editor-agent context format
 - **[CLAUDE.md](./CLAUDE.md)**: Claude Code specifics
-- **[llms.txt](./llms.txt)**: LLM discovery index
+- **[llms.txt](./llms.txt)**: machine-friendly rule index
 - **[.cursorrules](./.cursorrules)**: Cursor IDE rules
 
 #### Claude Code
@@ -2467,11 +2498,11 @@ Pointing any LLM-backed tool at [`https://raw.githubusercontent.com/Aboudjem/sol
 
 ### FAQ
 
-> Frequently asked questions about applying this Solidity style guide. Answers are kept short and source-cited for AI search engines and human skimmers alike.
+> Short, source-cited answers to the questions developers ask most often about this Solidity style guide.
 
 **What Solidity version does this guide target?**
 
-`0.8.30`. Pin it for application contracts (`pragma solidity 0.8.30;`) and use an open range `^0.8.20` for libraries and mixins. Version 0.8.30 ships with the Prague EVM as default in light of the May 2025 Pectra upgrade.
+`0.8.34`. Pin it for application contracts (`pragma solidity 0.8.34;`) and use an open range `^0.8.20` for libraries and mixins. Version 0.8.34 ships with the Prague EVM as default in light of the May 2025 Pectra upgrade.
 
 **When should I use `require(cond, CustomError())` vs `revert CustomError()`?**
 
@@ -2499,7 +2530,7 @@ Foundry. The testing section uses Foundry's naming matrix: `test_Description`, `
 
 **How is this different from the official Solidity style guide?**
 
-The official guide covers syntax and formatting only. This guide extends it with: best practices (custom errors, named returns, explicit types), gas patterns, security patterns, Foundry testing conventions, NatSpec guidance, ERC-7201 storage, transient storage, and a Claude Code skill so AI agents can apply the rules for you.
+The official guide covers syntax and formatting only. This guide extends it with best practices (custom errors, named returns, explicit types), gas patterns, security patterns, Foundry testing conventions, NatSpec guidance, ERC-7201 storage, transient storage, and a Claude Code skill that applies the rules across a codebase.
 
 **Can I use this guide in a commercial project?**
 
@@ -2511,12 +2542,12 @@ Open an issue with the [rule proposal template](./.github/ISSUE_TEMPLATE/new-rul
 
 ### Conclusion
 
-This Solidity Style Guide extends the official guidelines with practical rules for modern Solidity: custom errors, named imports, ERC-7201 namespaced storage, transient storage, Foundry testing, gas patterns, and security. It ships with Solhint + Prettier configs, a GitHub Actions CI workflow, and a [Claude Code skill](./skill/SKILL.md) so AI agents can apply the rules across any codebase.
+This Solidity Style Guide extends the official guidelines with practical rules for modern Solidity: custom errors, named imports, ERC-7201 namespaced storage, transient storage, Foundry testing, gas patterns, and security. It ships with Solhint and Prettier configs, a GitHub Actions CI workflow, and a [Claude Code skill](./skill/SKILL.md) that applies the rules across any codebase.
 
 **Primary sources**
 
 - [Solidity Official Style Guide](https://docs.soliditylang.org/en/latest/style-guide.html)
-- [Solidity Release Notes](https://www.soliditylang.org/blog/category/releases/) (0.8.24 – 0.8.30)
+- [Solidity Release Notes](https://www.soliditylang.org/blog/category/releases/) (0.8.24 – 0.8.34)
 - [Foundry Best Practices](https://book.getfoundry.sh/tutorials/best-practices)
 - [EIP-1153: Transient Storage](https://eips.ethereum.org/EIPS/eip-1153)
 - [ERC-7201: Namespaced Storage Layout](https://eips.ethereum.org/EIPS/eip-7201)

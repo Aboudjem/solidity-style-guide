@@ -6,7 +6,7 @@ You are working in a Solidity style guide docs repo. The canonical source is REA
 - No emojis added to files unless already present.
 - Max line length 120. Solidity indent 4 spaces. UTF-8 + LF.
 - Every rule section needs both a ✅ Yes and ❌ No Solidity example.
-- Pragma in examples: `^0.8.20` for libraries, `0.8.30` pinned for apps.
+- Pragma in examples: `^0.8.20` for libraries, `0.8.34` pinned for apps.
 - Named imports only: `import {X} from "./X.sol";`.
 - Prefer custom errors; `require(cond, CustomError())` syntax for ≥ 0.8.26 examples.
 - Explicit types only: `uint256`, not `uint`.

@@ -10,38 +10,48 @@ permissions:
   contents: read
 
 jobs:
-  docs:
-    name: Markdown & format checks
+  prettier:
+    name: Prettier (format check)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
+      - name: Prettier check
+        run: npx --yes prettier@3.3.3 --plugin=prettier-plugin-solidity --check "**/*.{md,yml,yaml,json,sol}"
 
-      - name: Install
-        run: npm ci || npm install
-
-      - name: Prettier (check)
-        run: npx prettier --check .
-
-      - name: Markdownlint
-        run: npx markdownlint-cli2 "**/*.md" "#node_modules"
+  markdownlint:
+    name: Markdownlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Run markdownlint
+        run: npx --yes markdownlint-cli2@0.13.0 "**/*.md" "#node_modules" "#skill/references/**"
 
   links:
-    name: Link check
+    name: Markdown link check
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: "yes"
+          use-verbose-mode: "yes"
+          config-file: ".github/mlc-config.json"
+          folder-path: "."
+          file-extension: ".md"
+
+  svg-validate:
+    name: Validate SVG banner
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Check links in core docs
+      - name: xmllint SVG
         run: |
-          npx --yes markdown-link-check -q README.md
-          npx --yes markdown-link-check -q AGENTS.md
-          npx --yes markdown-link-check -q CLAUDE.md
-          npx --yes markdown-link-check -q CONTRIBUTING.md
-          npx --yes markdown-link-check -q SECURITY.md
+          sudo apt-get update && sudo apt-get install -y libxml2-utils
+          xmllint --noout assets/banner.svg

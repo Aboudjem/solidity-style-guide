@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve the Solidity Style Guide. This doc is read by humans and by AI coding agents, so clarity and consistency matter a lot.
+Thanks for helping improve the Solidity Style Guide. This doc is read by humans and by coding agents, so clarity and consistency matter a lot.
 
 ## Ways to contribute
 

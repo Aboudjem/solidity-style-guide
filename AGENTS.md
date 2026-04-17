@@ -1,11 +1,11 @@
 # AGENTS.md
 
-> A short context file for AI coding agents (Claude Code, Cursor, Codex, Aider, etc.) working in this repository.
+> A short context file for coding agents (Claude Code, Cursor, Codex, Aider, etc.) working in this repository.
 > For humans: see [README.md](./README.md). For deep rule reference: see [docs/rules.md](./docs/rules.md) if present, else the README.
 
 ## What this repo is
 
-A **Solidity style guide**: conventions, formatting, best practices, testing, gas, and security rules for modern Solidity (≥ 0.8.20, targeting **0.8.30**). It is documentation, not deployable code.
+A **Solidity style guide**: conventions, formatting, best practices, testing, gas, and security rules for modern Solidity (≥ 0.8.20, targeting **0.8.34**). It is documentation, not deployable code.
 
 ## Ground rules for agents editing this repo
 
@@ -13,7 +13,7 @@ A **Solidity style guide**: conventions, formatting, best practices, testing, ga
 2. **Do not shorten the guide.** Each rule is load-bearing; prefer adding a new rule section over collapsing two.
 3. **Every rule must have a ✅ Yes / ❌ No Solidity example.** Single-example rules are incomplete.
 4. **Max line length 120** (Solidity and Markdown prose). Indent Solidity with 4 spaces.
-5. **Pragma in examples:** use `^0.8.20` for libraries and `0.8.30` (pinned) for application contracts, unless the rule is specifically about version pragmas.
+5. **Pragma in examples:** use `^0.8.20` for libraries and `0.8.34` (pinned) for application contracts, unless the rule is specifically about version pragmas.
 6. **Prefer named imports.** `import {X} from "./X.sol";`. Never use bare `import "./X.sol";`.
 7. **Prefer custom errors** over `require` strings. Use `require(cond, CustomError())` (Solidity ≥ 0.8.26) or `revert CustomError()`.
 8. **When in doubt, cite a source** in the rule (Solidity docs, EIP, Foundry book, RareSkills, Coinbase guide).

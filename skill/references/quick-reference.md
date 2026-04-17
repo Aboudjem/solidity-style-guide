@@ -19,7 +19,7 @@ Reserved-keyword collision                                       trailing_
 
 ```solidity
 // Application contract
-pragma solidity 0.8.30;
+pragma solidity 0.8.34;
 
 // Library / mixin
 pragma solidity ^0.8.20;

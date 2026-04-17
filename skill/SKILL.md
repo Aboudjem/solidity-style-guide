@@ -8,7 +8,7 @@ homepage: https://github.com/Aboudjem/solidity-style-guide
 
 # Solidity Style Guide — Claude Code Skill
 
-Use this skill whenever you are reviewing or writing Solidity, Foundry tests, or related configuration. It codifies the rules in [Aboudjem/solidity-style-guide](https://github.com/Aboudjem/solidity-style-guide) targeting **Solidity 0.8.30**.
+Use this skill whenever you are reviewing or writing Solidity, Foundry tests, or related configuration. It codifies the rules in [Aboudjem/solidity-style-guide](https://github.com/Aboudjem/solidity-style-guide) targeting **Solidity 0.8.34**.
 
 ## When to invoke
 
@@ -45,7 +45,7 @@ Trigger automatically on:
 
 ### Pragma
 
-- Applications: pin to a single version — `pragma solidity 0.8.30;`
+- Applications: pin to a single version — `pragma solidity 0.8.34;`
 - Libraries / mixins: open range — `pragma solidity ^0.8.20;`
 - Never `^0.8.0 ^0.9.0` or other multi-constraint forms
 
@@ -111,7 +111,7 @@ Trigger automatically on:
 - Mark values set once as `immutable`; mark compile-time values as `constant`
 - Prefer `uint256` over smaller ints unless packing is intentional
 - Hoist array length out of loops; use `unchecked { ++i; }` where safe (Solidity ≥ 0.8.22 already optimizes simple `++i` increments, but `unchecked` still helps for custom counters)
-- Use transient storage (`tstore` / `tload`, EIP-1153) for per-transaction flags like reentrancy locks when the EVM target supports it (Cancun+). Solidity 0.8.30 default EVM is Prague.
+- Use transient storage (`tstore` / `tload`, EIP-1153) for per-transaction flags like reentrancy locks when the EVM target supports it (Cancun+). Solidity 0.8.34 default EVM is Prague.
 
 ### Security
 

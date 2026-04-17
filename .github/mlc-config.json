@@ -1,0 +1,14 @@
+{
+  "ignorePatterns": [
+    { "pattern": "^http://localhost" },
+    { "pattern": "https://github.com/Aboudjem/solidity-style-guide" },
+    { "pattern": "^https://twitter.com" },
+    { "pattern": "^https://x.com" },
+    { "pattern": "^https://mythx.io" }
+  ],
+  "timeout": "15s",
+  "retryOn429": true,
+  "retryCount": 3,
+  "fallbackRetryDelay": "30s",
+  "aliveStatusCodes": [200, 206, 301, 302, 403, 429]
+}

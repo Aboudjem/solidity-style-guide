@@ -7,7 +7,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ### Added
 
-- **AI-ready scaffolding**: `AGENTS.md`, `CLAUDE.md`, `llms.txt`, `.cursorrules` so Claude Code, Cursor, Codex, and Aider can load this repo's rules automatically.
+- **Editor and agent context files**: `AGENTS.md`, `CLAUDE.md`, `llms.txt`, `.cursorrules` so Claude Code, Cursor, Codex, and Aider can load this repo's rules automatically.
 - **Claude Code skill** under `skill/` — `/solidity-style-guide:review` applies the full guide to any Solidity repo.
 - **SEO / GEO polish** on `README.md`: structured FAQ, semantic headings, meta description, richer anchor text, quick-reference table.
 - **Animated hero banner** at `assets/banner.svg`.
@@ -17,7 +17,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning: [S
 
 ### Updated
 
-- Rule references refreshed for **Solidity 0.8.30** (Pectra default EVM = Prague, transient storage stable, `require(cond, CustomError())` GA since 0.8.27 legacy / 0.8.26 via-ir).
+- Rule references refreshed for **Solidity 0.8.34** (Pectra default EVM = Prague, transient storage stable, `require(cond, CustomError())` GA since 0.8.27 legacy / 0.8.26 via-ir).
 - **ERC-7201** namespaced storage section expanded with the keccak formula and a full worked example.
 - **Foundry** testing section updated to the current naming matrix: `test_Description`, `testFuzz_Description`, `test_RevertWhen_Description`, `testFork_Description`, `invariant_Property`.
 
