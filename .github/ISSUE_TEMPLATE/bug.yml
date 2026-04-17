@@ -1,0 +1,30 @@
+name: Bug / Incorrect guidance
+description: Report a rule that's wrong, misleading, or leads to unsafe code.
+title: "[bug] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: textarea
+    id: location
+    attributes:
+      label: Where in the guide?
+      description: Section / heading path, e.g. "Best Practices > Using Custom Errors Over Require".
+      placeholder: "Best Practices > …"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong?
+      description: Describe the issue. If it's a security concern, please use SECURITY.md instead.
+    validations:
+      required: true
+  - type: textarea
+    id: suggested
+    attributes:
+      label: Suggested fix
+      description: Proposed replacement text or example. Diffs welcome.
+  - type: input
+    id: source
+    attributes:
+      label: Authoritative source
+      description: Link to Solidity docs, EIP, audit, release note, etc.

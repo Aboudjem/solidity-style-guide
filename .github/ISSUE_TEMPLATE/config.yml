@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security issue
+    url: https://github.com/Aboudjem/solidity-style-guide/security/advisories/new
+    about: Report rules that could lead to insecure code privately.
+  - name: Discussion
+    url: https://github.com/Aboudjem/solidity-style-guide/discussions
+    about: Ask questions or propose ideas before filing a formal issue.

@@ -1,0 +1,46 @@
+{
+  "name": "solidity-style-guide",
+  "version": "2.0.0",
+  "description": "A comprehensive, AI-ready Solidity style guide for consistent, safe, gas-aware smart contracts — Solidity 0.8.30, Foundry, ERC-7201, transient storage.",
+  "author": "Adam Boudjemaa <boudjemaa.adam@gmail.com> (https://github.com/Aboudjem)",
+  "license": "MIT",
+  "homepage": "https://github.com/Aboudjem/solidity-style-guide#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aboudjem/solidity-style-guide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Aboudjem/solidity-style-guide/issues"
+  },
+  "keywords": [
+    "solidity",
+    "style-guide",
+    "smart-contracts",
+    "ethereum",
+    "foundry",
+    "gas-optimization",
+    "security",
+    "erc-7201",
+    "natspec",
+    "solhint",
+    "prettier",
+    "ai-coding-agents",
+    "claude-code",
+    "cursor"
+  ],
+  "scripts": {
+    "lint:md": "markdownlint-cli2 \"**/*.md\" \"#node_modules\"",
+    "lint:sol": "solhint '**/*.sol' --ignore-path .gitignore",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "links": "markdown-link-check README.md AGENTS.md CONTRIBUTING.md SECURITY.md",
+    "check": "npm run format:check && npm run lint:md"
+  },
+  "devDependencies": {
+    "markdown-link-check": "^3.12.2",
+    "markdownlint-cli2": "^0.13.0",
+    "prettier": "^3.3.3",
+    "prettier-plugin-solidity": "^1.4.1",
+    "solhint": "^5.0.3"
+  }
+}

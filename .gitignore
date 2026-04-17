@@ -1,0 +1,41 @@
+node_modules/
+.pnp.*
+.yarn/*
+!.yarn/releases
+!.yarn/patches
+!.yarn/plugins
+!.yarn/sdks
+
+# Foundry
+out/
+cache/
+broadcast/*/*/dry-run/
+coverage.txt
+lcov.info
+
+# Hardhat
+artifacts/
+cache-hardhat/
+typechain-types/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OMC
+.omc/

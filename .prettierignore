@@ -1,0 +1,8 @@
+node_modules
+out
+cache
+artifacts
+broadcast
+coverage
+lib
+.omc

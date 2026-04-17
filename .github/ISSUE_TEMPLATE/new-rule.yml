@@ -1,0 +1,38 @@
+name: New rule proposal
+description: Suggest a new rule for the style guide.
+title: "[rule] "
+labels: ["enhancement", "rule-proposal"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Rule name
+      placeholder: "Prefer X over Y"
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Security / gas / readability / maintainability impact.
+    validations:
+      required: true
+  - type: textarea
+    id: yes_example
+    attributes:
+      label: ✅ Yes example
+      render: solidity
+    validations:
+      required: true
+  - type: textarea
+    id: no_example
+    attributes:
+      label: ❌ No example
+      render: solidity
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Authoritative source
+      description: EIP, Solidity docs, audit, release note, etc.

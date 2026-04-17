@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    name: Markdown & format checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci || npm install
+
+      - name: Prettier (check)
+        run: npx prettier --check .
+
+      - name: Markdownlint
+        run: npx markdownlint-cli2 "**/*.md" "#node_modules"
+
+  links:
+    name: Link check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check links in core docs
+        run: |
+          npx --yes markdown-link-check -q README.md
+          npx --yes markdown-link-check -q AGENTS.md
+          npx --yes markdown-link-check -q CLAUDE.md
+          npx --yes markdown-link-check -q CONTRIBUTING.md
+          npx --yes markdown-link-check -q SECURITY.md
