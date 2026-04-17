@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-label="Solidity Style Guide — clean, safe, gas-aware Solidity">
+  <title>Solidity Style Guide — clean, safe, gas-aware Solidity</title>
+  <desc>Animated banner with a Solidity diamond and auto-typing code sample.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="50%" stop-color="#0f1b3d"/>
+      <stop offset="100%" stop-color="#1b0b2e"/>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#FF006E"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.2"/>
+    </filter>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="360" fill="url(#bg)"/>
+  <rect width="1200" height="360" fill="url(#grid)"/>
+
+  <g transform="translate(900,180)">
+    <circle r="160" fill="url(#glow)">
+      <animate attributeName="r" values="150;175;150" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <g transform="translate(900,180)" fill="none" stroke-width="3" stroke-linejoin="round">
+    <polygon points="0,-100 -70,0 0,120 70,0" stroke="url(#accent)" fill="#00D4FF" fill-opacity="0.08">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="0,-70 -50,0 0,90 50,0" stroke="#ffffff" stroke-opacity="0.8" fill="#7C3AED" fill-opacity="0.18">
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="18s" repeatCount="indefinite"/>
+    </polygon>
+    <polygon points="0,-40 -28,0 0,55 28,0" stroke="#ffffff" fill="#FF006E" fill-opacity="0.5">
+      <animate attributeName="fill-opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
+    </polygon>
+  </g>
+
+  <g font-family="'JetBrains Mono','Fira Code',ui-monospace,monospace" font-size="15" fill="#8ea0c2">
+    <text x="60" y="230" opacity="0">
+      <tspan fill="#6b7aa0">// SPDX-License-Identifier: MIT</tspan>
+      <animate attributeName="opacity" values="0;1" begin="0.2s" dur="0.4s" fill="freeze"/>
+    </text>
+    <text x="60" y="252" opacity="0">
+      <tspan fill="#ff7ac6">pragma</tspan>
+      <tspan fill="#e6edf9"> solidity </tspan>
+      <tspan fill="#9ae6b4">^0.8.30</tspan>
+      <tspan fill="#e6edf9">;</tspan>
+      <animate attributeName="opacity" values="0;1" begin="0.7s" dur="0.4s" fill="freeze"/>
+    </text>
+    <text x="60" y="282" opacity="0">
+      <tspan fill="#ff7ac6">import</tspan>
+      <tspan fill="#e6edf9"> {</tspan>
+      <tspan fill="#7ee2ff">Ownable</tspan>
+      <tspan fill="#e6edf9">} </tspan>
+      <tspan fill="#ff7ac6">from</tspan>
+      <tspan fill="#9ae6b4"> "@openzeppelin/contracts/access/Ownable.sol"</tspan>
+      <tspan fill="#e6edf9">;</tspan>
+      <animate attributeName="opacity" values="0;1" begin="1.1s" dur="0.4s" fill="freeze"/>
+    </text>
+    <text x="60" y="312" opacity="0">
+      <tspan fill="#ff7ac6">error</tspan>
+      <tspan fill="#e6edf9"> </tspan>
+      <tspan fill="#ffd166">InsufficientFunds</tspan>
+      <tspan fill="#e6edf9">(</tspan>
+      <tspan fill="#7ee2ff">uint256</tspan>
+      <tspan fill="#e6edf9"> requested, </tspan>
+      <tspan fill="#7ee2ff">uint256</tspan>
+      <tspan fill="#e6edf9"> available);</tspan>
+      <animate attributeName="opacity" values="0;1" begin="1.5s" dur="0.4s" fill="freeze"/>
+    </text>
+  </g>
+
+  <g transform="translate(60,70)">
+    <text font-family="'Clash Display','Space Grotesk',Inter,system-ui,sans-serif" font-size="56" font-weight="800" fill="#e6edf9">
+      Solidity Style Guide
+    </text>
+    <text y="46" font-family="'Space Grotesk',Inter,system-ui,sans-serif" font-size="20" fill="#b8c5e0" letter-spacing="0.5">
+      Consistent. Safe. Gas-aware. AI-ready.
+    </text>
+    <rect y="70" width="0" height="3" fill="url(#accent)" rx="2">
+      <animate attributeName="width" from="0" to="520" dur="1.2s" fill="freeze" begin="0.2s"/>
+    </rect>
+  </g>
+
+  <g transform="translate(60,172)" font-family="'Space Grotesk',Inter,system-ui,sans-serif" font-size="13" fill="#e6edf9">
+    <g>
+      <rect width="96" height="26" rx="13" fill="#00D4FF" fill-opacity="0.12" stroke="#00D4FF" stroke-opacity="0.5"/>
+      <text x="48" y="18" text-anchor="middle" fill="#7ee2ff">0.8.30 ready</text>
+    </g>
+    <g transform="translate(108,0)">
+      <rect width="108" height="26" rx="13" fill="#7C3AED" fill-opacity="0.15" stroke="#7C3AED" stroke-opacity="0.55"/>
+      <text x="54" y="18" text-anchor="middle" fill="#c4b5fd">ERC-7201 storage</text>
+    </g>
+    <g transform="translate(226,0)">
+      <rect width="92" height="26" rx="13" fill="#FF006E" fill-opacity="0.15" stroke="#FF006E" stroke-opacity="0.55"/>
+      <text x="46" y="18" text-anchor="middle" fill="#fda4d8">Foundry-first</text>
+    </g>
+    <g transform="translate(328,0)">
+      <rect width="96" height="26" rx="13" fill="#22c55e" fill-opacity="0.12" stroke="#22c55e" stroke-opacity="0.55"/>
+      <text x="48" y="18" text-anchor="middle" fill="#86efac">AGENTS.md</text>
+    </g>
+  </g>
+</svg>
